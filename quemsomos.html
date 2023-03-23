@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos</title>
+</head>
+<style>
+      body{
+            width: 100%;
+            height: 100vh;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+               
+        }
+     .verde
+        {
+            width: 90%; /*largura*/
+            height: 80px;  /*altura*/
+            background-color: rgb(19, 96, 59);
+            color:darkgray;
+            position: fixed; /*fica o menu caixa preta em cima*/
+            border-radius: 0px 0px 30px 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center;
+            z-index: 1;
+        }
+        .karem
+        {
+            margin-top: 300px;
+            width: 70%; /*largura*/
+            height: 200px;  /*altura*/
+            background-color: rgb(241, 245, 7);
+            position: absolute; /*para usar o z-index tem que ter o position*/
+            left: 275px;
+            top: -210px;
+            z-index: 0; /*comando de colocar por tras*/
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: center;
+            align-items: center;
+            font-family: Georgia;
+        }
+                
+</style>
+<body>
+    
+    <div class= "verde">
+        <div onclick="AnimaMenu1();"   class="opcao"> <strong>QUEM SOMOS </strong> </div>
+    </div>
+    <div class= "karem">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    </div>
+    <div class= "Arthur">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    </div>
+    <div class= "Bruno">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    </div>
+    <div class= "Erick">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    </div>
+    <div class= "Graziela">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    </div>
+    <div class= "Jackson">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    </div>
+
+</body>
+</html>
