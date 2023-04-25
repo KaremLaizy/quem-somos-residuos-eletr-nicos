@@ -14,65 +14,107 @@
             display: flex;
             justify-content: center;
             font-family: Arial, sans-serif;
-               
+            background-color: white;
         }
-     .verde
-        {
-            width: 90%; /*largura*/
+     .menu{
+            width: 100%; /*largura*/
             height: 80px;  /*altura*/
-            background-color: rgb(19, 96, 59);
-            color:darkgray;
-            position: fixed; /*fica o menu caixa preta em cima*/
-            border-radius: 0px 0px 30px 30px;
+            background-color: white;
+            border-bottom: 2px solid rgb(19, 96, 59);
+            position: fixed; /*fica o menu em cima*/
+            text-align: center;
+            justify-content: space-between;
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            align-content: center;
-            z-index: 1;
+            flex-direction: column;
+            z-index: 2;
+            box-sizing: border-box;
+            padding: 0 30px;
+            
         }
-        .karem
+    .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            width: 1024px;
+            max-width: 100%;
+            max-height: 100%;
+            height: 100%;
+         }
+     .logo img {
+            
+            display: block;
+            height: auto;
+        
+        }
+        .quemsomos
         {
-            margin-top: 300px;
+            margin-top: 100px;
             width: 70%; /*largura*/
-            height: 200px;  /*altura*/
-            background-color: rgb(241, 245, 7);
-            position: absolute; /*para usar o z-index tem que ter o position*/
-            left: 275px;
-            top: -210px;
-            z-index: 0; /*comando de colocar por tras*/
+            height: auto;  /*altura*/
+            background-color:transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            font-family: Georgia;
+            margin: 90px;
+        }
+        .amarelo
+        {
+            width: 100%; /*largura*/
+            height: 100px;  /*altura*/
+            background-color: rgb(38, 216, 130);
+            border-radius: 30px 30px 30px 30px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            align-content: center;
             align-items: center;
-            font-family: Georgia;
+            align-content: center;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            z-index: 1;
+            box-sizing:content-box;
+             
         }
                 
 </style>
 <body>
-    
-    <div class= "verde">
-        <div onclick="AnimaMenu1();"   class="opcao"> <strong>QUEM SOMOS </strong> </div>
+    <header class="menu">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src ="logo.png" />
+            </a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="quemsomos.html">Quem Somos</a>
+                <a href="quemsomos.html">Quem Somos</a>
+                <a href="quemsomos.html">Quem Somos</a>
+                <a href="quemsomos.html">Quem Somos</a>
+                <a href="quemsomos.html">Quem Somos</a>
+            </nav>
+        </div>
+    </header>
+   <div class="quemsomos">
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">karem </div>
     </div>
-    <div class= "karem">
-        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">grazi </div>
     </div>
-    <div class= "Arthur">
-        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">arthur </div>
     </div>
-    <div class= "Bruno">
-        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">bruno </div>
     </div>
-    <div class= "Erick">
-        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">xxxx </div>
     </div>
-    <div class= "Graziela">
-        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">xxxx </div>
     </div>
-    <div class= "Jackson">
-        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">> </div>
-    </div>
+</div>
 
 </body>
 </html>
