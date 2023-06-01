@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos</title>
+</head>
+<style>
+      body{
+            width: 100%;
+            height: 100vh;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+     .menu{
+            width: 100%; /*largura*/
+            height: 80px;  /*altura*/
+            background-color: white;
+            border-bottom: 2px solid rgb(19, 96, 59);
+            position: fixed; /*fica o menu em cima*/
+            text-align: center;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+            box-sizing: border-box;
+            padding: 0 30px;
+            
+        }
+    .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            width: 1024px;
+            max-width: 100%;
+            max-height: 100%;
+            height: 100%;
+         }
+     .logo img {
+            
+            display: block;
+            height: auto;
+        
+        }
+        .quemsomos
+        {
+            margin-top: 100px;
+            width: 70%; /*largura*/
+            height: auto;  /*altura*/
+            background-color:transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            font-family: Georgia;
+            margin: 90px;
+        }
+        .amarelo
+        {
+            width: 100%; /*largura*/
+            height: 100px;  /*altura*/
+            background-color: rgb(38, 216, 130);
+            border-radius: 30px 30px 30px 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            z-index: 1;
+            box-sizing:content-box;
+             
+        }
+                
+</style>
+<body>
+    <header class="menu">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src ="logo.png" />
+            </a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="quemsomos.html">Quem Somos</a>
+                <a href="quemsomos.html">Quem Somos</a>
+                <a href="quemsomos.html">Quem Somos</a>
+                <a href="quemsomos.html">Quem Somos</a>
+                <a href="quemsomos.html">Quem Somos</a>
+            </nav>
+        </div>
+    </header>
+   <div class="quemsomos">
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">karem </div>
+    </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">grazi </div>
+    </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">arthur </div>
+    </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">bruno </div>
+    </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">xxxx </div>
+    </div>
+    <div class= "amarelo">
+        <div img onclick="Executar();" src="familia estrella.jpeg"    width="100px">xxxx </div>
+    </div>
+</div>
+
+</body>
+</html>
