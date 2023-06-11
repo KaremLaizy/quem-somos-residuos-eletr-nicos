@@ -1,0 +1,68 @@
+.section-lixoeletronico .texto {
+    margin-bottom: 30px;
+}
+
+.box-tipolixo {
+    padding: 20px;
+    border: 1px solid rgba(145, 158, 171, 0.32);
+    border-radius: 18px;
+    height: 100%;
+    border-right: 5px solid;
+}
+
+.box-azul {
+    border-right-color: blue;
+}
+
+.box-verde {
+    border-right-color: green;
+}
+
+.box-marrom {
+    border-right-color: brown;
+}
+
+.box-tipolixo h2{
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.box-tipolixo p {
+    margin: 0;
+}
+
+.lixeira > img{
+    max-width: 60%;
+    margin: 0 20%;
+}
+
+.draggable {
+    height: 400px;
+    border: 1px dashed rgba(145, 158, 171, 0.4);
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    background-color: rgba(145, 158, 171, 0.05);
+}
+
+.draggable .lixo {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba(145, 158, 171, 0.5);
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.draggable .lixo img{
+    max-height: 100%;
+    width: auto;
+}
+
+.draggable .lixo.ui-draggable {
+    cursor: move;
+}
