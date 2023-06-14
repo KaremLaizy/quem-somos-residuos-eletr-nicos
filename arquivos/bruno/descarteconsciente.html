@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESCARTE CONSCIENTE</title>
+    <style>
+        header{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    box-shadow: 2px 2px 2px gray;
+    padding: 0%;
+    margin: 0%;
+    z-index: 2;
+}
+.conteudo-header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.div-imagem-header{
+    width: 100px;
+    height: 100%;
+    margin-left: 20px;
+}
+.imagem-logo-pequena{
+    height: 100%;
+    position: relative;
+    left: 3%;
+    top: 0%;
+}
+.header-menu{
+    position: relative;
+    width: 75%;
+    left: 0px;
+}
+.header-menu > menu{
+    display: flex;
+    top: 5%;
+    position: relative;
+    width: 90%;
+}
+.header-menu > menu > ul{
+    position: relative;
+    left: 2%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.header-menu > menu > ul > li > a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(19, 96, 59);
+    width: auto;
+}
+.header-menu > menu > ul > li > a:hover{
+    background-color: rgb(121, 199, 141);
+    border-radius: 5px;
+}
+.header-menu > menu > ul > li{
+    position: relative;
+    width: auto;
+    margin-left: auto;
+    
+}
+        
+        .titulo
+        {
+            background-color: white;
+            width: 1300px;
+            height: 100px;
+            color: rgb(5, 119, 20);
+            margin: 15px;
+            display: flex;
+            flex-direction: row;
+            font-size:80px;
+            text-shadow: 2px 1px black;
+            position: relative;
+            top:70px;
+          
+        } 
+        .image1
+        {
+            background-color: white;
+            width: 200px;
+            height: 100px;
+            margin-left: 150px;
+            
+            
+           
+            
+            
+        }
+        .descarte
+        {
+            background-color: white;
+            width: 1100px;
+            height: 100px;
+            margin-left: 70px;
+           
+        }
+        
+        .A1
+        {
+            background-color: white;
+            width: 1300px;
+            height: 300px;
+            display: flex;
+            flex-direction: row;
+           
+            margin: 15px;
+        }
+        .imagen1
+        {
+            background-color: white;
+            width:400px;
+            height: 300px;
+            
+        }
+        .texto1
+        {
+            background-color: white;
+            width: 800px;
+            height: 250px;
+            margin-left: 50px;
+            margin-top: 40px;
+            font-size: 23px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: justify;
+            color: rgb(4, 62, 12);
+            
+        }
+        .A2
+        {
+            background-color: white;
+            width: 1310px;
+            height: 300px;
+            display: flex;
+            flex-direction: row;
+           
+            margin: 15px;
+        }
+        .imagen2
+        {
+            background-color: white;
+            width:400px;
+            height: 300px;
+            margin-left: 0px;
+        }
+        .texto2
+        {
+            background-color: white;
+            width: 900px;
+            height: 290px;
+            margin: 15px;
+            margin-top: 3px;
+            font-size: 23px;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(4, 62, 12);
+        }
+        .A3
+        {
+            background-color: white;
+            width: 1310px;
+            height: 300px;
+            margin: 15px;
+            display: flex;
+            flex-direction: row;
+           
+        }
+        .imagen3
+        {
+            background-color: white;
+            width:400px;
+            height: 300px;
+            margin-left: 15px;
+           
+        }
+        .texto3
+        {
+            background-color: white;
+            width: 900px;
+            height: 295px;
+            margin-left: 30px;
+            margin-top: 40px;
+            font-size: 23px;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(4, 62, 12);
+            
+        }
+        
+        .A4
+        {
+            background-color: white;
+            width: 1300px;
+            height: 300px;
+            margin: 15px;
+            display: flex;
+            flex-direction: row;
+        
+        }
+        .imagen4
+        {
+            background-color: white;
+            width:400px;
+            height: 300px;
+            margin: 15px;
+            margin-top: 5px;
+            
+        }
+        .texto4
+        {
+            background-color: white;
+            width: 900px;
+            height: 230px;
+            margin: 5px;
+            margin-top: 45px;
+            font-size: 23px;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(4, 62, 12);
+        
+        }
+        .A5
+        {
+            background-color: white;
+            width: 1300px;
+            height: 300px;
+            margin: 15px;
+            display: flex;
+            flex-direction: row;
+           
+        }
+        .imagen5
+        {
+            background-color: white;
+            width:400px;
+            height: 300px;
+            margin-left: 100px;
+            
+        }
+        .texto5
+        {
+            background-color: white;
+            width: 800px;
+            height: 220px;
+            margin-top: 60px;
+            font-size: 23px;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(4, 62, 12);
+           
+        }
+        .links1
+        {
+            background-color: white;
+            width: 1300px;
+            height: 200px;
+            margin: 20px;
+            margin-top: 80px;
+            display: flex;
+            flex-direction: row;
+            
+            
+        }
+        .video
+        {
+            width: 400px;
+            height: 195px;
+            display: flex;
+            flex-direction: row;
+            border-style: solid;
+            margin-left: 25px;
+            border-radius: 5px;
+            border-color: rgb(14, 78, 31);
+        }
+        .grafico
+        {
+            width: 400px;
+            height: 195px;
+            margin-left: 25px;
+            display: flex;
+            flex-direction: row;
+            border-style: solid;
+            border-radius: 5px;
+            border-color: rgb(14, 78, 31);
+        }
+        .espaço1
+        {
+            background-color: white;
+            width: 80px;
+            height: 190px;
+           
+        }
+        .topico
+        {
+            width: 400px;
+            height: 195px;
+            margin-left: 25px;
+            display: flex;
+            flex-direction: row;
+            border-style: solid;
+            border-radius: 5px;
+            border-color: rgb(14, 78, 31);
+        }
+        
+        .espaço2
+        {
+            background-color: white;
+            width: 80px;
+            height: 190px;
+            
+        }
+        .escrita
+        {
+            background-color: white;
+            width: 1320px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .palavra
+        {
+            background-color: white;
+            width: 400px;
+            height: 50px;
+            font-size: 35px;
+            margin-left: 100px;
+            text-align: justify;
+            text-shadow: 2px 1px rgb(16, 134, 30);
+        }
+        .palavra1
+        {
+            background-color: white;
+            width: 400px;
+            height: 50px;
+            font-size: 35px;
+            margin-left: 80px;
+            text-align: justify;
+            text-shadow: 2px 1px rgb(16, 134, 30);
+        }
+
+        .palavra2
+        {
+            background-color: white;
+            width: 400px;
+            height: 50px;
+            font-size: 35px;
+            margin-left: 75px;
+            text-align: justify;
+            text-shadow: 2px 1px rgb(16, 134, 30);
+        }
+
+    </style>
+    <link rel="icon" href="logo.ico">
+        
+</head>       
+        
+<body>
+
+    <header>    
+        <div class="conteudo-header">
+            <div class="div-imagem-header">
+            <a href="index.html"><img src="logo(pequena).png" alt="Logo do site" class="imagem-logo-pequena"></a>
+            </div>  
+            <div class="header-menu">   
+                <menu>
+                    <ul>
+                        <li class="item1"><a href="index.html" ><strong>Home</strong></a></li>
+                        <li class="item2"><a href="grafico.html"><strong>Quem somos</strong></a></li>
+                        <li class="item3"><a href="#" target="_self"><strong>Descarte consciente</strong></a></li>
+                        <li class="item4"><a href="#" ><strong>Pontos de coleta</strong></a></li>
+                        <li class="item5"><a href="#" ><strong>Lixo eletronico </strong></a></li>
+                    </ul>
+                </menu>
+            </div>
+        </div> 
+    </header>
+    <br><br><br><br>
+    <div class="titulo">
+        <div class="image1"><img src="lixo3.png" width="200px" height="100px"></div>
+        <div class="descarte"><b> Descarte Consciente </b></div>
+    </div>
+    
+    <BR><br><br><br><br><br><br>
+        <div class="A5">
+            <div class="texto5">
+                <b>CURIOSIDADE</b><br>    
+                de acordo com dados levantados pela Green Eletron, em uma pesquisa realizada aqui no Brasil com 2 mil pessoas, 23% dos brasileiros entrevistados não sabem o que é lixo eletrônico e nem conhecem como é feito seu processo de descarte. Por isso, hoje eu vim explicar para vocês o que é lixo eletrônico e como você pode descartá-lo devidamente. Confira logo abaixo nas próximas linhas!
+            </div>
+            <div class="imagen5"><img src="lixo5.png" width="400px" height="300px"></div>
+            
+        </div>
+        <br><br><br><br><br>
+
+    <div class="A1">
+        <div class="imagen1"><img src="lixo4.png" width="400px" height="300px" ></div> 
+        <div class="texto1">
+            <b>DESCARTE CONSCIENTE</b><br> 
+            Com o avanço cada vez maior da tecnologia, é comum que o descarte de aparelhos e equipamentos aumente também. Porém, esse lixo eletrônico é um problema crescente em nossa sociedade devido ao descarte incorreto no meio ambiente. Saiba mais sobre esse importante assunto e aprenda como fazer o descarte consciente!
+        </div> 
+       
+    </div>
+
+    <br><br><br><br><br>
+    <div class="A2">
+       
+        <div class="texto2">
+            <b>O QUE É LIXO ELETRÔNICO</b><br>
+            Termo usado para se referir a todos os equipamentos elétricos e eletrônicos, suas partes e acessórios, que  foram descartados como resíduos, sem a intenção de reutilizá-los. Também conhecidos como e-lixo ou ainda, Resíduos de Equipamentos Elétricos e Eletrônicos (REEE).
+            A categoria inclui “produtos da linha branca”, como refrigeradores, máquinas de lavar e micro-ondas, além de computadores, celulares, tablets, drones, pilhas, baterias, cartuchos e toners.
+            E se você está se perguntando sobre os itens do dia a dia profissional, saiba que muitos deles são  considerados lixos eletrônicos, como: furadeiras e parafusadeiras, lanternas recarregáveis, serras, lixadeiras, aspiradores de pó, máquinas de corte e outras ferramentas elétricas, e ferramentas para cortar relva ou para outras atividades de jardinagem.
+        </div>
+        <div class="imagen2"><img src="lixo2.png" width="400px" height="300px" ></div>
+    </div>
+
+    <br><br><br><br><br>
+
+    <div class="A3">
+        <div class="imagen3"><img src="lixo7.png" width="400px" height="300px" ></div>
+        <div class="texto3">
+            <b>QUAIS SÃO OS RISCOS AMBIENTAIS DE NÃO REALIZAR O DESCARTE CORRETO?</b><br>
+            Quando os equipamentos estão intactos, não apresentam danos imediatos ao meio ambiente. Porém, caso ele tenha sido aberto para recuperar algum material interno e/ou seja descartado sem o devido cuidado, as substâncias e materiais da sua composição podem, sim, produzir danos importantes ao meio ambiente. Diferente do que se pode pensar, o desmonte não facilita o trabalho das recicladoras e pode ser perigoso, resultando na contaminação de solos, mananciais e no surgimento de doenças.
+            A maioria das pessoas não descarta o seu lixo eletrônico de forma correta pelo desconhecimento do perigo que este lixo traz para o meio ambiente e para nós mesmos.
+
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+
+    <div class="A4">
+        <div class="texto4">
+            <b>ONDE POSSO DESCARTAR?</b><br>
+            Muitas cidades já dispõem de iniciativas de coleta e reciclagem de resíduos eletrônicos, como empresas cooperativas que atuam na reciclagem desse tipo de material, sem que haja agressão ao meio ambiente. Informe-se e conheça qual a melhor maneira de realizar o descarte consciente onde você mora.
+        </div>
+
+        <div class="imagen4"><img src="lixo6.png" width="400px" height="300px"></div>
+        
+    </div>
+
+    <br><br><br><br><br>
+
+    
+    <div class="links1">
+        <div class="video">
+            <iframe width="100%" height="195" src="https://www.youtube.com/embed/YIL4QRPkZU4?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            
+            
+        </div>
+        <div class="grafico">
+            <div class="espaço1"></div>
+            <a href="grafico.html" target="_self"><img src="grafico.png"width="100%" height="195px" ></a>
+        </div>
+        <div class="topico">
+            <div class="espaço2"></div>
+            <a href="file:///C:/Users/bsi/Desktop/Projeto-web/Projeto-web/Aanbiental.html"target="_self"><img src="lixo10.png"width="100%" height="195px"></a>
+        </div>
+
+
+    </div>
+    <div class="escrita">
+        <div class="palavra"><b>Descarte Conciente</b></div>
+        <div class="palavra1"><b>Gráfico Comparativo</b></div>
+        <div class="palavra2"><b>Impacto Ambiental</b></div>
+    </div>
+</body>  
+</html>

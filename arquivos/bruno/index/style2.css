@@ -1,0 +1,158 @@
+@charset "UTF-8";
+.container{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin-left: 0px;
+}
+header{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    box-shadow: 2px 2px 2px gray;
+    padding: 0%;
+    margin: 0%;
+    z-index: 2;
+}
+.conteudo-header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.div-imagem-header{
+    width: 100px;
+    height: 100%;
+    margin-left: 20px;
+}
+.imagem-logo-pequena{
+    height: 100%;
+    position: relative;
+    left: 3%;
+    top: 0%;
+}
+.header-menu{
+    position: relative;
+    width: 75%;
+    left: 0px;
+}
+.header-menu > menu{
+    display: flex;
+    top: 5%;
+    position: relative;
+    width: 90%;
+}
+.header-menu > menu > ul{
+    position: relative;
+    left: 2%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.header-menu > menu > ul > li > a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(19, 96, 59);
+    width: auto;
+}
+.header-menu > menu > ul > li > a:hover{
+    background-color: rgb(121, 199, 141);
+    border-radius: 5px;
+}
+.header-menu > menu > ul > li{
+    position: relative;
+    width: auto;
+    margin-left: auto;
+    
+}
+main{
+    top: 70px;
+    left: 0px;
+    position: relative;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+}
+article.art1{
+    width: 60vw;
+    background-color: white;
+    margin: 2%;
+    padding: 10px;
+    border-radius: 10px;
+    top: 10px;
+    margin-left: 2px;
+    position: relative;
+}
+article.art2{
+    width: 90vw;
+    background-color: white;
+    margin: 2.5%;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 0px;
+    position: relative;
+    bottom: 30px;
+}
+::after,::before{
+    box-sizing: border-box;
+}
+footer{
+    background-color: #4B4B4D;
+    width: 100%;
+    height: 20%;
+    margin-left: 0px;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    left: 0px;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    
+}
+.footer-conteudo{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 10px;
+}
+.footer-menu{
+    position: relative;
+    width: 75%;
+    left: 0px;
+}
+.footer-menu > menu{
+        display: flex;
+        top: 2%;
+        position: relative;
+        width: 90%;
+    
+}
+.footer-menu > menu > ul{
+    border-style: solid;
+    position:relative;
+    left: 2%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.footer-menu > menu > ul > li a{
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: white;
+    width: auto;
+}
+.footer-menu > menu > ul > li > a:hover{
+    background-color: rgb(59, 65, 61);
+    border-radius: 5px;
+}
