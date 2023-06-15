@@ -66,3 +66,9 @@
 .draggable .lixo.ui-draggable {
     cursor: move;
 }
+
+@media (max-width: 991px){       
+    .box-tipolixo {
+        margin-bottom: 15px;
+    }
+}
