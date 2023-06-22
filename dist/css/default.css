@@ -33,7 +33,7 @@ p {
 }
 
 .row {
-    margin-left: -5px;
+    margin-left: -50px;
     margin-right: -5px;
     flex-wrap: wrap;
     display: flex;
