@@ -136,22 +136,31 @@
 
 			$( "#lixo-marron" ).draggable({ revert: "invalid" });
 			$( "#lixeira-marron" ).droppable({
-				accept: "#lixo-marron"
+				accept: "#lixo-marron",drop: function(event, ui) {
+      		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
+    		}
 			});
 
 			$( "#lixo-branca" ).draggable({ revert: "invalid" });
 			$( "#lixeira-branca" ).droppable({
-				accept: "#lixo-branca"
+				accept: "#lixo-branca",drop: function(event, ui) {
+      		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
+    		}
 			});
 
 			$( "#lixo-verde" ).draggable({ revert: "invalid" });
 			$( "#lixeira-verde" ).droppable({
-				accept: "#lixo-verde"
+				accept: "#lixo-verde",drop: function(event, ui) {
+      		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
+   	 		}
 			});
 
 			$( "#lixo-azul" ).draggable({ revert: "invalid" });
 			$( "#lixeira-azul" ).droppable({
-				accept: "#lixo-azul"
+				accept: "#lixo-azul",drop: function(event, ui) {
+      		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
+					
+    		}
 			});
 		});
 	</script>
