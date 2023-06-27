@@ -134,28 +134,26 @@
 			});
 
 
-			$( "#lixo-marron" ).draggable({ revert: "invalid" });
+			$( "#lixo-marron, #lixo-branca, #lixo-verde, #lixo-azul" ).draggable({ revert: "invalid" });
+
 			$( "#lixeira-marron" ).droppable({
 				accept: "#lixo-marron",drop: function(event, ui) {
       		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
     		}
 			});
 
-			$( "#lixo-branca" ).draggable({ revert: "invalid" });
 			$( "#lixeira-branca" ).droppable({
 				accept: "#lixo-branca",drop: function(event, ui) {
       		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
     		}
 			});
 
-			$( "#lixo-verde" ).draggable({ revert: "invalid" });
 			$( "#lixeira-verde" ).droppable({
 				accept: "#lixo-verde",drop: function(event, ui) {
       		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
    	 		}
 			});
 
-			$( "#lixo-azul" ).draggable({ revert: "invalid" });
 			$( "#lixeira-azul" ).droppable({
 				accept: "#lixo-azul",drop: function(event, ui) {
       		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
