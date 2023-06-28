@@ -1,0 +1,274 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9ae83a5b1f.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+  <link href="./css/default.css" rel="stylesheet">
+  <link href="./css/pontos-descartes.css" rel="stylesheet">
+
+  <title>Mapa</title>
+</head>
+
+<body class="">
+  <header class="header">
+    <div class="container">
+      <a href="/" class="brand">
+        <img src="images/logo.png">
+      </a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="descarte-consciente.html">Descarte Consciente</a>
+        <a href="lixo-eletronico.html">Lixo Eletrônico</a>
+        <a href="pontos-descartes.html" class="active">Pontos de Descartes</a>
+        <a href="quem-somos.html">Quem Somos</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrapper">
+    <div class="container">
+      <div class="section-map">
+        <div class="row">
+          <div class="column column-2">
+            <div class="texto">
+              <h1>Pontos de Descartes</h1>
+              <p>Veja abaixo os endereços que aceitam receber e encaminhar os descartes tecnológicos.</p>
+              <h4>Dicas para o Descarte:</h4>
+              <p>Para garantir um descarte adequado dos seus lixos eletrônicos, siga estas dicas:</p>
+              <p>Faça uma verificação inicial: Certifique-se de apagar todos os dados pessoais dos dispositivos
+                eletrônicos antes do descarte. Faça backup dos arquivos importantes e restaure as configurações de
+                fábrica.</p>
+              <p>Separe os itens: Organize os dispositivos eletrônicos separando-os por tipo, como celulares,
+                computadores, TVs, entre outros. Isso facilitará o processo de reciclagem.</p>
+              <p>Informe-se sobre os regulamentos locais: Verifique se existem regulamentos específicos em sua região
+                sobre o descarte de lixo eletrônico. Alguns locais podem ter restrições ou exigências adicionais.</p>
+            </div>
+            <form id="calculate-route">
+              <input id="origin-input" type="text" placeholder="CEP de origem" data-mask="00.000-000">
+              <button onclick="calculateRoute()" type="button">Calcular Rota</button>
+            </form>
+          </div>
+          <div class="column column-2">
+            <div id="map" style="width: 100%; height: 565px; position: relative;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="section-address">
+        <div class="row">
+          <div class="column column-3">
+            <div class="box box-address">
+              <h2>Unidade Regional de Obras Oeste</h2>
+              <p>R. São Brás, 184 - Vila Nova</p>
+              <p>CEP: 89237-400</p>
+            </div>
+          </div>
+          <div class="column column-3">
+            <div class="box box-address">
+              <h2>Unidade Regional de Obras Sudeste</h2>
+              <p>R. Ana Maria Roncálio de Souza, 59 - Paranaguamirim</p>
+              <p>CEP: 89231-395</p>
+            </div>
+          </div>
+          <div class="column column-3">
+            <div class="box box-address">
+              <h2>Unidade Regional de Obras Centro-Norte</h2>
+              <p>R. Guilherme, 604 - Costa e Silva</p>
+              <p>CEP: 89218-500</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer">
+        <p>© 2023 - TODOS OS DIREITOS RESERVADOS</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/jquery-3.6.0.js"></script>
+  <script src="./js/jquery.mask.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+  <script>
+    var map;
+    var markers = [];
+    var routingControl; // Adicionado para evitar erro
+
+    var destinations = [
+      { lat: -26.285148026378167, lng: -48.902995332226205, title: "<strong>Unidade Regional de Obras Oeste</strong><br>R. São Brás, 184 - Vila Nova" },
+      { lat: -26.343353854750703, lng: -48.78867078804767, title: "<strong>Unidade Regional de Obras Sudeste</strong><br>, R. Ana Maria Roncálio de Souza, 59 - Paranaguamirim" },
+      { lat: -26.318227525726748, lng: -48.81598520028589, title: "<strong>Unidade Regional de Obras Centro-Norte</strong><br>R. Guilherme, 604 - Costa e Silva" }
+    ];
+
+    function initMap() {
+      map = L.map('map').setView([-26.3045, -48.8467], 12);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+      }).addTo(map);
+
+      destinations.forEach(function (destination) {
+        addMarker(destination.lat, destination.lng, destination.title);
+      });
+    }
+
+    function calculateRoute() {
+      var originInput = document.getElementById('origin-input');
+      var origin = originInput.value.trim().replace(/\D/g, '');
+
+      removeMarkers();
+      addMarkerByAddress(origin);
+
+      // Variáveis para armazenar as coordenadas do CEP
+      var originLat, originLng;
+
+      // Obtém as coordenadas do CEP usando a API de geocodificação
+      var geocodeUrl = 'https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(origin) + '&format=json';
+
+      fetch(geocodeUrl)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          if (data.length > 0) {
+            originLat = parseFloat(data[0].lat);
+            originLng = parseFloat(data[0].lon);
+
+            var closestDestination = null;
+            var minDistance = Infinity;
+
+            // Calcula a distância entre o CEP e cada destino
+            destinations.forEach(function (destination) {
+              var destLat = destination.lat;
+              var destLng = destination.lng;
+
+              var distance = calculateDistance(originLat, originLng, destLat, destLng);
+
+              if (distance < minDistance) {
+                minDistance = distance;
+                closestDestination = destination;
+              }
+            });
+
+            if (closestDestination) {
+              var closestLat = closestDestination.lat;
+              var closestLng = closestDestination.lng;
+
+              addMarker(closestLat, closestLng, closestDestination.title);
+
+              if (routingControl) {
+                map.removeControl(routingControl);
+              }
+
+              routingControl = L.Routing.control({
+                waypoints: [
+                  L.latLng(originLat, originLng),
+                  L.latLng(closestLat, closestLng)
+                ],
+                routeWhileDragging: true,
+                showAlternatives: true,
+                lineOptions: {
+                  styles: [{ color: 'blue', opacity: 0.6, weight: 6 }]
+                },
+                createMarker: function (i, waypoint) {
+                  return L.marker(waypoint.latLng, {
+                    draggable: true,
+                    icon: L.icon({
+                      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+                      iconSize: [25, 41],
+                      iconAnchor: [12, 41],
+                      popupAnchor: [1, -34],
+                      shadowSize: [41, 41]
+                    })
+                  });
+                }
+              }).addTo(map);
+            }
+          } else {
+            alert("Erro ao obter coordenadas do CEP");
+          }
+        })
+        .catch(function (error) {
+          alert("Erro ao obter coordenadas do CEP:", error);
+        });
+    }
+
+    function calculateDistance(lat1, lng1, lat2, lng2) {
+      var earthRadius = 6371; // Raio médio da Terra em quilômetros
+
+      var dLat = degToRad(lat2 - lat1);
+      var dLng = degToRad(lng2 - lng1);
+
+      var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(degToRad(lat1)) * Math.cos(degToRad(lat2)) *
+        Math.sin(dLng / 2) * Math.sin(dLng / 2);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+      var distance = earthRadius * c;
+
+      return distance;
+    }
+
+    function degToRad(deg) {
+      return deg * (Math.PI / 180);
+    }
+
+    function addMarker(lat, lng, title) {
+      var marker = L.marker([lat, lng]).addTo(map);
+      marker.bindPopup(title);
+      markers.push(marker);
+    }
+
+    function addMarkerByAddress(address) {
+      var url = 'https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(address) + '&format=json';
+
+      fetch(url)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          if (data.length > 0) {
+            var lat = data[0].lat;
+            var lon = data[0].lon;
+
+            var marker = L.marker([lat, lon]).addTo(map);
+            marker.bindPopup(address);
+            markers.push(marker);
+            map.setView([lat, lon], 12);
+          } else {
+            console.log("Erro ao adicionar marcador");
+          }
+        })
+        .catch(function (error) {
+          console.log("Erro ao adicionar marcador:", error);
+        });
+    }
+
+    function removeMarkers() {
+      markers.forEach(function (marker) {
+        map.removeLayer(marker);
+      });
+      markers = [];
+    }
+
+    $(document).ready(function () {
+      initMap();
+      $('#calculate-route').on('submit', function (e) {
+        e.preventDefault();
+        calculateRoute();
+      });
+    });
+  </script>
+</body>
+
+</html>
