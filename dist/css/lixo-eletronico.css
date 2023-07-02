@@ -33,7 +33,7 @@
 
 .lixeira > img{
     max-width: 80%;
-    margin: 0 20%;
+    margin: 0 10%;
 }
 
 .draggable {
@@ -69,5 +69,10 @@
 @media (max-width: 991px){       
     .box-tipolixo {
         margin-bottom: 15px;
+    }
+
+    .section-jogo .column-4 {
+        flex: 0 0 25%;
+        max-width: 25%;
     }
 }

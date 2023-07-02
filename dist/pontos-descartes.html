@@ -4,30 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/9ae83a5b1f.js" crossorigin="anonymous"></script>
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-
   <link href="./css/default.css" rel="stylesheet">
   <link href="./css/pontos-descartes.css" rel="stylesheet">
 
-  <title>Mapa</title>
+  <script src="https://kit.fontawesome.com/9ae83a5b1f.js" crossorigin="anonymous"></script>
+
+  <title>Pontos de Descartes - Recitrônico</title>
 </head>
 
 <body class="">
   <header class="header">
     <div class="container">
-      <a href="/" class="brand">
+      <a href="index.html" class="brand">
         <img src="images/logo.png">
       </a>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="descarte-consciente.html">Descarte Consciente</a>
-        <a href="lixo-eletronico.html">Lixo Eletrônico</a>
-        <a href="pontos-descartes.html" class="active">Pontos de Descartes</a>
-        <a href="quem-somos.html">Quem Somos</a>
-      </nav>
+      <div id="menu-principal">
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="descarte-consciente.html">Descarte Consciente</a>
+          <a href="lixo-eletronico.html">Lixo Eletrônico</a>
+          <a href="pontos-descartes.html" class="active">Pontos de Descartes</a>
+          <a href="quem-somos.html">Quem Somos</a>
+        </nav>
+      </div>
+      <button type="button" id="btn-menu" title="menu">
+        <i class="fas fa-bars icon-menu"></i>
+        <i class="fas fa-times icon-close"></i>
+      </button>
     </div>
   </header>
   <main class="wrapper">
@@ -95,7 +102,7 @@
 
   <script src="./js/jquery-3.6.0.js"></script>
   <script src="./js/jquery.mask.js"></script>
-
+  <script src="./js/jquery.menu.js"></script>
   <script>
     var map;
     var markers = [];

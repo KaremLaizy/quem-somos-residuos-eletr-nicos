@@ -1,20 +1,25 @@
-.section-address, .section-map {
-    margin-top: 30px;
+.section-address,
+.section-map {
+  margin-top: 30px;
 }
+
 .section-map h1 {
-    margin-top: 0;
+  margin-top: 0;
 }
+
 .box-address {
-    padding: 20px;
-    border: 1px solid rgba(145, 158, 171, 0.32);
-    border-radius: 18px;
-    min-height: 100%;
+  padding: 20px;
+  border: 1px solid rgba(145, 158, 171, 0.32);
+  border-radius: 18px;
+  min-height: 100%;
 }
-.box-address h2{
-    margin-top: 0;
+
+.box-address h2 {
+  margin-top: 0;
 }
+
 .box-address p {
-    margin: 0;
+  margin: 0;
 }
 
 #calculate-route {
@@ -23,7 +28,7 @@
   align-items: center;
 }
 
-#calculate-route > input {
+#calculate-route>input {
   display: inline-block;
   width: calc(100% - 140px);
   padding: 0.375rem 0.75rem;
@@ -37,7 +42,7 @@
   margin-right: 10px;
 }
 
-#calculate-route > button {
+#calculate-route>button {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -57,4 +62,12 @@
 
 #map {
   border-radius: 18px;
+}
+
+
+@media (max-width: 991px) {
+  .section-address .column {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
 }
