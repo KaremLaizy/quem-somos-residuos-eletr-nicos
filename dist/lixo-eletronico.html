@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="./css/default.css" rel="stylesheet">
-    <link href="./css/lixo-eletronico.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9ae83a5b1f.js" crossorigin="anonymous"></script>
-    <title>O que é lixo eletrônico? - Lixo Eletronico</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+	<link href="./css/default.css" rel="stylesheet">
+	<link href="./css/lixo-eletronico.css" rel="stylesheet">
+
+	<script src="https://kit.fontawesome.com/9ae83a5b1f.js" crossorigin="anonymous"></script>
+	
+	<title>Lixo Eletronico - Recitrônico</title>
 </head>
+
 <body>
-    <header class="header">
-        <div class="container">
-            <a href="/" class="brand">
-                <img src="./images/logo.png" />
-            </a>
-            <nav class="nav">
-                <a href="/">Home</a>
-                <a href="descarte-consciente.html" >Descarte Consciente</a>
-                <a href="lixo-eletronico.html" class="active">Lixo Eletrônico</a>
-                <a href="pontos-descartes.html">Pontos de Descartes</a>
-                <a href="quem-somos.html">Quem Somos</a>
-            </nav>
-        </div>
-    </header>
-    <main class="wrapper">
-        <div class="container">
-            <div class="section-lixoeletronico">
-                <div class="row">
-                    <div class="column column-1">
-                        <div class="texto">
-                            <h1>O que é lixo eletrônico?</h1>
-                            <p>Resíduos de Equipamentos Elétricos – Eletrônicos (REEE), ou lixo eletrônico, são todo tipo de equipamentos e produtos que necessitam de energia/corrente elétrica para funcionar (como TVs, celulares pilhas, tablets, máquinas de lavar, computadores, dentre muitos outros dispositivos), que se tornaram velhos e perderam sua utilização.</p>
-                            <p>“Esse tipo de lixo é tudo aquilo que ligamos na tomada ou que têm componentes eletrônicos, como chips, fios e outros aparelhos e itens”, simplifica Marcus Nakagawa, professor da ESPM e especialista em sustentabilidade.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column column-4">
-                        <div class="box box-tipolixo box-verde">
-                            <h2>Linha verde</h2>
-                            <p>Pilhas, baterias, celulares, tablets, fones de ouvido, carregadores, computadores, câmera digital e notebooks.</p>
-                        </div>
-                    </div>
-                    <div class="column column-4">
-                        <div class="box box-tipolixo box-marrom">
-                          	<h2>Linha marrom</h2>
-                          	<p>Televisores com tubo, dispositivos DVDs e acessórios de áudio..</p>
-                        </div>
-                    </div>
-                    <div class="column column-4">
-                      	<div class="box box-tipolixo box-branca">
-                        	<h2>Linha branca</h2>
-                        	<p>Máquinas de lavar roupa e louça, geladeiras, fogão, ar-condicionado e micro-ondas</p>
-                    	</div>
-                  	</div>
-                  	<div class="column column-4">
-                    	<div class="box box-tipolixo box-azul">
-                      		<h2>Linha azul</h2>
-                      		<p>Aparelhos de utilidades domésticas, como secadores de cabelo, cafeteiras, ferro de passar roupa, liquidificadores e aspiradores de pó.</p>
-                    	</div>
-                  	</div>
-                </div>
-            </div>
+	<header class="header">
+		<div class="container">
+			<a href="index.html" class="brand">
+				<img src="./images/logo.png" />
+			</a>
+			<div id="menu-principal">
+				<nav class="nav">
+					<a href="index.html">Home</a>
+					<a href="descarte-consciente.html">Descarte Consciente</a>
+					<a href="lixo-eletronico.html" class="active">Lixo Eletrônico</a>
+					<a href="pontos-descartes.html">Pontos de Descartes</a>
+					<a href="quem-somos.html">Quem Somos</a>
+				</nav>
+			</div>
+			<button type="button" id="btn-menu" title="menu">
+				<i class="fas fa-bars icon-menu"></i>
+				<i class="fas fa-times icon-close"></i>
+			</button>
+		</div>
+	</header>
+	<main class="wrapper">
+		<div class="container">
+			<div class="section-lixoeletronico">
+				<div class="row">
+					<div class="column column-1">
+						<div class="texto">
+							<h1>O que é lixo eletrônico?</h1>
+							<p>Resíduos de Equipamentos Elétricos – Eletrônicos (REEE), ou lixo eletrônico, são todo tipo de
+								equipamentos e produtos que necessitam de energia/corrente elétrica para funcionar (como TVs, celulares
+								pilhas, tablets, máquinas de lavar, computadores, dentre muitos outros dispositivos), que se tornaram
+								velhos e perderam sua utilização.</p>
+							<p>“Esse tipo de lixo é tudo aquilo que ligamos na tomada ou que têm componentes eletrônicos, como chips,
+								fios e outros aparelhos e itens”, simplifica Marcus Nakagawa, professor da ESPM e especialista em
+								sustentabilidade.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column column-4">
+						<div class="box box-tipolixo box-verde">
+							<h2>Linha verde</h2>
+							<p>Pilhas, baterias, celulares, tablets, fones de ouvido, carregadores, computadores, câmera digital e
+								notebooks.</p>
+						</div>
+					</div>
+					<div class="column column-4">
+						<div class="box box-tipolixo box-marrom">
+							<h2>Linha marrom</h2>
+							<p>Televisores com tubo, dispositivos DVDs e acessórios de áudio..</p>
+						</div>
+					</div>
+					<div class="column column-4">
+						<div class="box box-tipolixo box-branca">
+							<h2>Linha branca</h2>
+							<p>Máquinas de lavar roupa e louça, geladeiras, fogão, ar-condicionado e micro-ondas</p>
+						</div>
+					</div>
+					<div class="column column-4">
+						<div class="box box-tipolixo box-azul">
+							<h2>Linha azul</h2>
+							<p>Aparelhos de utilidades domésticas, como secadores de cabelo, cafeteiras, ferro de passar roupa,
+								liquidificadores e aspiradores de pó.</p>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="section-jogo">
 				<div class="title">
 					<h2>Joguinho</h2>
@@ -107,23 +126,24 @@
 					</div>
 				</div>
 			</div>
-        </div>
-    </main>
-    <footer>
-      <div class="container">
-        <div  class="footer">
-          <p>© 2023 - TODOS OS DIREITOS RESERVADOS</p>
-        </div>
-      </div>
-    </footer>
+		</div>
+	</main>
+	<footer>
+		<div class="container">
+			<div class="footer">
+				<p>© 2023 - TODOS OS DIREITOS RESERVADOS</p>
+			</div>
+		</div>
+	</footer>
 	<script src="./js/jquery-3.6.0.js"></script>
 	<script src="./js/jquery-ui.js"></script>
+	<script src="./js/jquery.menu.js"></script>
 	<script>
-		$(document).ready(function() {
+		$(document).ready(function () {
 			//Posiciona de forma aleatoria
 			var $container = $(".draggable");
 
-			$(".lixo").each(function() {
+			$(".lixo").each(function () {
 				var posX = Math.random() * ($container.width() - $(this).width());
 				var posY = Math.random() * ($container.height() - $(this).height());
 
@@ -134,33 +154,34 @@
 			});
 
 
-			$( "#lixo-marron, #lixo-branca, #lixo-verde, #lixo-azul" ).draggable({ revert: "invalid" });
+			$("#lixo-marron, #lixo-branca, #lixo-verde, #lixo-azul").draggable({ revert: "invalid" });
 
-			$( "#lixeira-marron" ).droppable({
-				accept: "#lixo-marron",drop: function(event, ui) {
-      		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
-    		}
+			$("#lixeira-marron").droppable({
+				accept: "#lixo-marron", drop: function (event, ui) {
+					ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
+				}
 			});
 
-			$( "#lixeira-branca" ).droppable({
-				accept: "#lixo-branca",drop: function(event, ui) {
-      		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
-    		}
+			$("#lixeira-branca").droppable({
+				accept: "#lixo-branca", drop: function (event, ui) {
+					ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
+				}
 			});
 
-			$( "#lixeira-verde" ).droppable({
-				accept: "#lixo-verde",drop: function(event, ui) {
-      		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
-   	 		}
+			$("#lixeira-verde").droppable({
+				accept: "#lixo-verde", drop: function (event, ui) {
+					ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
+				}
 			});
 
-			$( "#lixeira-azul" ).droppable({
-				accept: "#lixo-azul",drop: function(event, ui) {
-      		ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
-					
-    		}
+			$("#lixeira-azul").droppable({
+				accept: "#lixo-azul", drop: function (event, ui) {
+					ui.draggable.css("z-index", -1); // Define o z-index do objeto arrastado como -1
+
+				}
 			});
 		});
 	</script>
 </body>
+
 </html>

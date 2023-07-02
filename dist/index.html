@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+	<link href="./css/default.css" rel="stylesheet">
+	<link href="./css/slick.css" rel="stylesheet">
+	<link href="./css/home.css" rel="stylesheet">
+
+	<script src="https://kit.fontawesome.com/9ae83a5b1f.js" crossorigin="anonymous"></script>
+	<title>Recitrônico</title>
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<a href="index.html" class="brand">
+				<img src="./images/logo.png" alt="Lixo Eletrônico" />
+			</a>
+			<div id="menu-principal">
+				<nav class="nav">
+					<a href="index.html" class="active">Home</a>
+					<a href="descarte-consciente.html">Descarte Consciente</a>
+					<a href="lixo-eletronico.html">Lixo Eletrônico</a>
+					<a href="pontos-descartes.html">Pontos de Descartes</a>
+					<a href="quem-somos.html">Quem Somos</a>
+				</nav>
+			</div>
+			<button type="button" id="btn-menu" title="menu">
+				<i class="fas fa-bars icon-menu"></i>
+				<i class="fas fa-times icon-close"></i>
+			</button>
+		</div>
+	</header>
+	<main class="wrapper">
+		<div class="banner-section" id="banner-principal">
+			<div class="banner-item banner-item--01">
+				<div class="container">
+					<div class="text">
+						<h2 class="animation">Saiba mais sobre<br> lixo eletrônico</h2>
+						<p class="animation delay">
+							<a href="lixo-eletronico.html" class="btn btn-link"><span>Ver mais<i
+										class="fas fa-arrow-right"></i></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="banner-item banner-item--02">
+				<div class="container">
+					<div class="text">
+						<h2 class="animation">Veja o melhor lugar para<br>descarta seu lixo</h2>
+						<p class="animation delay">
+							<a href="pontos-descartes.html" class="btn btn-link"><span>Ver mapa<i
+										class="fas fa-arrow-right"></i></span></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section section-welcome">
+			<div class="container">
+				<div class="row">
+					<div class="column column-1">
+						<div class="texto">
+							<h1>Recitrônico Descarte Consciente</h1>
+							<p>Bem-vindo ao ReciTrônico! Acreditamos firmemente que a reciclagem é um dos pilares
+								fundamentais para a construção de um futuro mais verde e consciente. Em nosso site, você
+								encontrará informações valiosas sobre descarte consciente, classificação dos tipos de
+								lixos eletrônicos, e o principal, que são os pontos de coleta de lixo eletrônico na
+								cidade de Joinville, localizada no norte de Santa Catarina. Nosso objetivo é facilitar o
+								descarte adequado desses materiais, garantindo que eles sejam reciclados corretamente,
+								pois entendemos que o lixo eletrônico é um problema crescente em nossa sociedade, devido
+								ao rápido avanço da tecnologia. Além disso, ao utilizar os pontos de coleta de lixo
+								eletrônico indicados em nosso site, você estará promovendo a economia circular, na qual
+								os materiais descartados são recuperados, reciclados e reintegrados ao ciclo produtivo.
+								Isso significa que você estará ajudando a criar um sistema mais sustentável, fomento o
+								desenvolvimento socioambiental, privilegiando a reciclagem de materiais e a inclusão
+								produtiva de populações vulneráveis. Junte-se a nós nessa jornada de preservação
+								ambiental. Recicle seus aparelhos eletrônicos e ajude-nos a construir um futuro
+								sustentável para todos. Juntos, podemos fazer a diferença!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="container">
+			<div class="footer">
+				<p>© 2023 - TODOS OS DIREITOS RESERVADOS</p>
+			</div>
+		</div>
+	</footer>
+	<script src="./js/jquery-3.6.0.js"></script>
+	<script src="./js/jquery.slick.js"></script>
+	<script src="./js/jquery.menu.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#banner-principal').slick({
+				arrows: false,
+				dots: true,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 1,
+				autoplay: true,
+				autoplaySpeed: 2000
+			});
+		})
+	</script>
+</body>
+
+</html>

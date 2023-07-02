@@ -1,7 +1,9 @@
 .quemsomos {
     margin-top: 100px;
-    width: 70%; /*largura*/
-    height: 800px;  /*altura*/
+    width: 70%;
+    /*largura*/
+    height: 800px;
+    /*altura*/
     background-color: rgb(156, 156, 153);
     display: flex;
     flex-direction: column;
@@ -62,7 +64,7 @@
     padding-left: 30px;
 }
 
-.quemsomos-item.even .infor .text{
+.quemsomos-item.even .infor .text {
     padding-right: 15px;
 }
 
@@ -70,7 +72,7 @@
     padding-right: 30px;
 }
 
-.quemsomos-item.odd .infor .text{
+.quemsomos-item.odd .infor .text {
     padding-left: 15px;
 }
 
@@ -96,4 +98,45 @@
     margin-bottom: 0;
     color: rgb(99, 115, 129);
     line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+    .quemsomos-item {
+       flex-direction: column;
+    }
+
+    .quemsomos-item .column-1--5 {
+        order: 0;
+    }
+
+    .quemsomos-item .column-4--5{
+        order: 1;
+    }
+
+    .quemsomos-item.even .infor .text, 
+    .quemsomos-item.even .infor {
+        padding: 0;
+    }
+
+    .quemsomos-item .infor {
+        flex-direction: column;
+    }
+
+    .quemsomos-item .infor h3 {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .quemsomos-item.even .infor .text {
+        order: 0;
+    }
+    .quemsomos-item .infor .social{
+        order: 1;
+    }
+    .quemsomos-item .infor .social a {
+        margin: 0 5px;
+        margin-top: 30px;
+        margin-bottom: 0;
+        width: 40px;
+        height: 40px;
+    }
 }
