@@ -1,0 +1,247 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link href="./css/default.css" rel="stylesheet">
+  <link href="./css/pontos-descartes.css" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/9ae83a5b1f.js" crossorigin="anonymous"></script>
+
+  <title>Pontos de Descartes - Recitrônico</title>
+</head>
+
+<body class="">
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png">
+      </a>
+      <div id="menu-principal">
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="descarte-consciente.html">Descarte Consciente</a>
+          <a href="lixo-eletronico.html">Lixo Eletrônico</a>
+          <a href="pontos-descartes.html" class="active">Pontos de Descartes</a>
+          <a href="quem-somos.html">Quem Somos</a>
+        </nav>
+      </div>
+      <button type="button" id="btn-menu" title="menu">
+        <i class="fas fa-bars icon-menu"></i>
+        <i class="fas fa-times icon-close"></i>
+      </button>
+    </div>
+  </header>
+  <main class="wrapper">
+    <div class="container">
+      <div class="section-map">
+        <div class="row">
+          <div class="column column-2">
+            <div class="texto">
+              <h1>Pontos de Descartes</h1>
+              <p>Veja abaixo os endereços que aceitam receber e encaminhar os descartes tecnológicos.</p>
+              <h4>Dicas para o Descarte:</h4>
+              <p>Para garantir um descarte adequado dos seus lixos eletrônicos, siga estas dicas:</p>
+              <p>Faça uma verificação inicial: Certifique-se de apagar todos os dados pessoais dos dispositivos
+                eletrônicos antes do descarte. Faça backup dos arquivos importantes e restaure as configurações de
+                fábrica.</p>
+              <p>Separe os itens: Organize os dispositivos eletrônicos separando-os por tipo, como celulares,
+                computadores, TVs, entre outros. Isso facilitará o processo de reciclagem.</p>
+              <p>Informe-se sobre os regulamentos locais: Verifique se existem regulamentos específicos em sua região
+                sobre o descarte de lixo eletrônico. Alguns locais podem ter restrições ou exigências adicionais.</p>
+            </div>
+            <form id="calculate-route">
+              <input id="origin-input" type="text" placeholder="CEP de origem" data-mask="00.000-000">
+              <button onclick="calculateRoute()" type="button">Calcular Rota</button>
+            </form>
+          </div>
+          <div class="column column-2">
+            <div id="map" style="width: 100%; height: 565px; position: relative;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="section-address">
+        <div class="row">
+          <div class="column column-3">
+            <div class="box box-address" id="local-01">
+              <h2>Unidade Regional de Obras Oeste</h2>
+              <p>R. São Brás, 184 - Vila Nova</p>
+              <p>CEP: 89237-400</p>
+            </div>
+          </div>
+          <div class="column column-3">
+            <div class="box box-address" id="local-03">
+              <h2>Unidade Regional de Obras Centro-Norte</h2>
+              <p>R. Guilherme, 604 - Costa e Silva</p>
+              <p>CEP: 89218-500</p>
+            </div>
+          </div>
+          <div class="column column-3">
+            <div class="box box-address" id="local-02">
+              <h2>Unidade Regional de Obras Sudeste</h2>
+              <p>R. Ana Maria Roncálio de Souza, 59 - Paranaguamirim</p>
+              <p>CEP: 89231-395</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer">
+        <p>© 2023 - TODOS OS DIREITOS RESERVADOS</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/jquery-3.6.0.js"></script>
+  <script src="./js/jquery.mask.js"></script>
+  <script src="./js/jquery.menu.js"></script>
+  <script>
+    var map;
+    var markers = [];
+    var directionsService;
+    var directionsRenderer;
+    var selectedDestinationId = null; // ID do destino selecionado
+
+    var destinations = [
+      { id: "destination-1", lat: -26.285148026378167, lng: -48.902995332226205, title: "<strong>Unidade Regional de Obras Oeste</strong><br>R. São Brás, 184 - Vila Nova", label: "A" },
+      { id: "destination-2", lat: -26.343353854750703, lng: -48.78867078804767, title: "<strong>Unidade Regional de Obras Sudeste</strong><br>R. Ana Maria Roncálio de Souza, 59 - Paranaguamirim", label: "B" },
+      { id: "destination-3", lat: -26.27907412030995, lng: -48.86492075582311, title: "<strong>Unidade Regional de Obras Centro-Norte</strong><br>R. Guilherme, 604 - Costa e Silva", label: "C" }
+    ];
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -26.3045, lng: -48.8467 }, // Coordenadas de Joinville
+        zoom: 12
+      });
+
+      directionsService = new google.maps.DirectionsService();
+      directionsRenderer = new google.maps.DirectionsRenderer();
+      directionsRenderer.setMap(map);
+
+      destinations.forEach(function (destination) {
+        addMarker(destination);
+      });
+    }
+
+    function calculateRoute() {
+      var originInput = document.getElementById('origin-input');
+      var origin = originInput.value.trim().replace(/\D/g, '');
+
+      // Remove marcadores anteriores
+      removeMarkers();
+
+      // Adiciona marcador para o endereço de origem
+      addMarker({ lat: null, lng: null, title: origin, label: 'O' }); // Define o rótulo como 'O' para o ponto de origem
+
+      var closestDestinationIndex = getClosestDestinationIndex();
+
+      if (closestDestinationIndex !== -1) {
+        var closestDestination = destinations[closestDestinationIndex];
+        var destinationLatLng = new google.maps.LatLng(closestDestination.lat, closestDestination.lng);
+
+        var request = {
+          origin: origin,
+          destination: destinationLatLng,
+          travelMode: google.maps.TravelMode.DRIVING
+        };
+
+        directionsService.route(request, function (result, status) {
+          if (status === google.maps.DirectionsStatus.OK) {
+            directionsRenderer.setDirections(result);
+
+            // Atualiza o rótulo do destino com o rótulo original do array destinations
+            var updatedDestination = Object.assign({}, closestDestination); // Cria uma cópia do objeto closestDestination
+            updatedDestination.label = closestDestination.label;
+            addMarker(updatedDestination);
+
+            // Define o destino selecionado como ativo
+            setSelectedDestination(closestDestination.id);
+          } else {
+            console.log("Erro na requisição da API de rotas: " + status);
+          }
+        });
+      } else {
+        console.log("Erro na resposta da API");
+      }
+    }
+
+    function addMarker(destination) {
+      var marker = new google.maps.Marker({
+        position: { lat: destination.lat, lng: destination.lng },
+        map: map,
+        title: destination.title,
+        label: destination.label
+      });
+      markers.push(marker);
+
+      // Adiciona evento de clique ao marcador
+      marker.addListener('click', function () {
+        setSelectedDestination(destination.id);
+      });
+    }
+
+    function removeMarkers() {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
+      markers = [];
+    }
+
+    function setSelectedDestination(destinationId) {
+      // Remove a classe "active" do destino anteriormente selecionado
+      if (selectedDestinationId) {
+        var previousSelectedElement = document.getElementById(selectedDestinationId);
+        if (previousSelectedElement) {
+          previousSelectedElement.classList.remove('active');
+        }
+      }
+
+      // Define o novo destino selecionado e adiciona a classe "active"
+      selectedDestinationId = destinationId;
+      var selectedElement = document.getElementById(destinationId);
+      if (selectedElement) {
+        selectedElement.classList.add('active');
+      }
+    }
+
+    function getClosestDestinationIndex() {
+      var closestIndex = -1;
+      var closestDistance = Number.MAX_VALUE;
+
+      var origin = new google.maps.LatLng(map.getCenter().lat(), map.getCenter().lng());
+
+      for (var i = 0; i < destinations.length; i++) {
+        var destination = new google.maps.LatLng(destinations[i].lat, destinations[i].lng);
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(origin, destination);
+
+        if (distance < closestDistance) {
+          closestIndex = i;
+          closestDistance = distance;
+        }
+      }
+
+      return closestIndex;
+    }
+
+    $(document).ready(function () {
+      $('#calculate-route').on('submit', function (e) {
+        e.preventDefault();
+        calculateRoute();
+      });
+    });
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWcZmQv7YZBmcZHEC9AHLXqlveijhgPaY&callback=initMap"></script>
+  </script>
+</body>
+
+</html>
